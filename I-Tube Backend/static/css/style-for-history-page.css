@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Noto Sans", sans-serif;
+    scroll-behavior: smooth;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  /* ROOT */
+  :root {
+    /* COLORS */
+    --main-bg-color: #0f0f0f;
+    --second-bg-color: #222222;
+    --font-color: #e4e4e4;
+    --second-font-color: #908f8f;
+    --border-color: #5b5b5b;
+    /* --nav-logo-color:#2020dc00; */
+    /* HEIGHTS */
+    --top-header-h: 56px;
+    /* WIDTHS */
+    --side-bar-w: 0px;
+  }
+  .watch-history-page{
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-bg-color);
+    color: var(--font-color);
+    padding: 10px 15px;
+    /* background-color: rebeccapurple; */
+
+  }
+  .watch-history-page>h2{
+    font-size: 3rem;
+    margin-left: 30px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 90px;
+  }
+  .watch-history-page>h2>span{
+    font-size: 1.4rem;
+    align-self:center;
+    cursor: pointer;
+    color: var(--second-font-color);
+    font-weight: 550;
+
+  }
+  .watch-history-page>h2>span>i{
+    font-size: 1.5rem;
+  }
+  .videos-and-watch-dates{
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    overflow-y: scroll;
+    /* background-color: rgb(92, 95, 95); */
+  }
+  .videos-and-watch-dates>.watched-date{
+    font-size: 2rem;
+    font-weight:750;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .videos-and-watch-dates .watched-videos{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(5 ,1fr);
+    gap: 10px;
+    padding: 10px;
+  }
