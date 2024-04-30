@@ -1,0 +1,267 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  /* COLORS */
+  --main-bg-color: #0f0f0f;
+  --second-bg-color: #222222;
+  --font-color: #e4e4e4;
+  --second-font-color: #908f8f;
+  --border-color: #5b5b5b;
+  --comment-sec-bg-color: #898888;
+  /* HEIGHTS */
+  --top-header-h: 56px;
+  /* WIDTHS */
+  --side-bar-w: 0px;
+}
+/* following page style */
+.following-page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  grid-template-columns: 1fr 4fr;
+  padding-left: 15px;
+}
+/* following channels style */
+.following-page .following-channels {
+  width: 100%;
+  height: 100%;
+  background-color: var(--second-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 25px 10px;
+  row-gap: 7.5px;
+  overflow-y: scroll;
+  border-radius: 7.5px;
+}
+.following-channels .following-channel-profile-card {
+  width: 100%;
+  height: 60px;
+  background-color: var(--main-bg-color);
+  border-radius: 10px;
+  padding: 0 2.5px;
+  padding-left: 10px;
+}
+.following-channels .following-channel-profile-card a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: var(--font-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+/* hover */
+.following-channels .following-channel-profile-card:active {
+  background-color: var(--comment-sec-bg-color);
+}
+.following-channel-profile-card .following-channel-profile-pic {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+/* followig channel contents style  */
+.following-page .following-channel-contents {
+  width: 100%;
+  height: 100;
+  background-color: var(--main-bg-color);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 15px 10px;
+  column-gap: 10px;
+  row-gap: 10px;
+  overflow-y: scroll;
+  /* grid-template-rows: 2fr; */
+}
+.following-page .following-channel-bannar-profile {
+  width: 100%;
+  grid-area: 1/1/3/5;
+  height: clamp(400px, 500px, 600px);
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.following-channel-bannar-profile .following-page-banner {
+  width: clamp(1280px, 100%, 100%);
+  height: 50%;
+  border-radius: 10px;
+}
+.following-channel-bannar-profile .following-page-main-profile-area {
+  width: clamp(1280px, 100%, 100%);
+  height: 50%;
+  position: relative;
+}
+.following-page-main-profile-area .following-page-main-profile-pic {
+  width: 177.5px;
+  height: 177.5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -67.5%);
+}
+.following-page-main-profile-area .following-page-main-profile-pic::before {
+  content: "";
+  /* background-color: red; */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-clip: text;
+  border: 5px solid rgb(255, 0, 149);
+  /* display: none; */
+}
+.following-page-main-profile-area .following-page-main-channel-name {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: var(--font-color);
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 650;
+  /* background-color: #908f8f; */
+}
+.following-page-main-profile-area .following-page-main-channel-name span {
+  font-size: 1.75rem;
+  color: var(--second-font-color);
+}
+
+/* following-page-main-btns */
+.following-page-main-btns {
+  display: flex;
+  column-gap: 50px;
+  margin-top: 10px;
+}
+/* following-page-main-follow-btn */
+.following-page-main-follow-btn {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  padding: 0 25px;
+  border-radius: 25px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0;
+}
+.following-page-main-follow-btn::after {
+  content: "Follow";
+  width: 95%;
+  border-radius: inherit;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: var(--second-bg-color);
+  color: var(--font-color);
+}
+.following-page-main-follow-btn::before {
+  content: "";
+  background: linear-gradient(45deg, #00ff77, #00e5ff, #ff00e6, #ff006a);
+  color: var(--font-color);
+  width: 110%;
+  border-radius: 50%;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 0 0;
+  height: 245%;
+  animation-name: follow-btn-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* following-page-main-share-btn */
+.following-page-main-share-btn {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  padding: 0 25px;
+  border-radius: 25px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0;
+}
+.following-page-main-share-btn::after {
+  content: "Share";
+  width: 95%;
+  border-radius: inherit;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.75rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: var(--second-bg-color);
+  color: var(--font-color);
+}
+.following-page-main-share-btn::before {
+  content: "";
+  /* background: linear-gradient(45deg, #00ff77, #00e5ff, #ff00e6, #ff006a); */
+  background-color: var(--font-color);
+  color: var(--font-color);
+  width: 110%;
+  border-radius: 50%;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 0 0;
+  height: 245%;
+  /* animation-name: share-btn-animation; */
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+}
+/* animation for follow button */
+@keyframes share-btn-animation {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  25% {
+    transform: rotate(720deg) translate(-50%, -50%);
+  }
+  50% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+}
