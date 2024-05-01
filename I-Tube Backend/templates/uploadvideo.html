@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      a {
+        text-align: center;
+        color: rgb(146, 5, 5);
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Video</title>
+  </head>
+  <body>
+    <h1>Upload Video</h1>
+    <form
+      id="uploadForm"
+      action="/upload"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" id="fileInput" name="file" accept="video/*" />
+      <input type="submit" id="uploadButton" value="Upload" />
+    </form>
+    <p id="errorMsg" style="color: red; display: none; font-style: italic">
+      Please select a video file.
+    </p>
+
+    <script>
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", function (event) {
+          var fileInput = document.getElementById("fileInput");
+          var errorMsg = document.getElementById("errorMsg");
+
+          // Check if a file is selected
+          if (!fileInput.files || !fileInput.files[0]) {
+            errorMsg.style.display = "block";
+            event.preventDefault(); // Prevent form submission
+          }
+        });
+    </script>
+
+    <a href="/"></h2>
+      <br />
+      Home
+    </a>
+
+  </body>
+</html>
+<!-- Date: 15/04/2024, by- S.R. -->
